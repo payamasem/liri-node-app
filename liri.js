@@ -31,7 +31,7 @@ function movieThis(){
         movie = "Mr. Nobody";
     }
     params = movie
-    request("http://www.omdbapi.com/?i=tt3896198&apikey=40e9cece") + params + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
+    request("http://www.omdbapi.com/?apikey=40e9cece") + params + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var movieObject = JSON.parse(body);
             console.log(movieObject);
