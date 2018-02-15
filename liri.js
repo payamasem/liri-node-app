@@ -21,7 +21,7 @@ switch(liriArgument) {
         "2. spotify-this-song 'any song name' "+"\r\n"+
         "3. movie-this 'any movie name' "+"\r\n"+
         "4. do-what-it-says."+"\r\n"+
-        "Be sure to put the movie or song name in quotation marks if it's more than one word.");
+        "Put the movie/song name in quotation marks if it's more than one word.");
 };
 
 
@@ -31,7 +31,7 @@ function movieThis(){
         movie = "Mr. Nobody";
     }
     params = movie
-    request("http://www.omdbapi.com/?i=tt3896198&apikey=trilogy") + params + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
+    request("http://www.omdbapi.com/?i=tt3896198&apikey=40e9cece") + params + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var movieObject = JSON.parse(body);
             console.log(movieObject);
@@ -69,20 +69,21 @@ function myTweets() {
 
     var twitterUsername = process.argv[3];
     if(!twitterUsername){
-        twitterUsername = "mxtx";
+        twitterUsername = "yamyamdoe";
     }
     params = {screen_name: twitterUsername};
     client.get("statuses/user_timeline/", params, function(error, data, response){
         if (!error) {
             for(var i = 0; i < data.length; i++) {
-                //console.log(response); // Show the full response in the terminal
+    
+
                 var twitterResults = 
                 "@" + data[i].user.screen_name + ": " + 
                 data[i].text + "\r\n" + 
                 data[i].created_at + "\r\n" + 
                 "------------------------------ " + i + " ------------------------------" + "\r\n";
                 console.log(twitterResults);
-                log(twitterResults); // calling log function
+                log(twitterResults); 
             }
         }  else {
             console.log("Error :"+ error);
@@ -113,7 +114,7 @@ function spotifyThisSong(songName) {
                     "URL: " + songInfo[i].preview_url + "\r\n" + 
                     "------------------------------ " + i + " ------------------------------" + "\r\n";
                     console.log(spotifyResults);
-                    log(spotifyResults); // calling log function
+                    log(spotifyResults); 
                 }
             }
         }	else {
