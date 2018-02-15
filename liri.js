@@ -69,20 +69,21 @@ function myTweets() {
 
     var twitterUsername = process.argv[3];
     if(!twitterUsername){
-        twitterUsername = "mxtx";
+        twitterUsername = "yamyamdoe";
     }
     params = {screen_name: twitterUsername};
     client.get("statuses/user_timeline/", params, function(error, data, response){
         if (!error) {
             for(var i = 0; i < data.length; i++) {
-                //console.log(response); // Show the full response in the terminal
+    
+
                 var twitterResults = 
                 "@" + data[i].user.screen_name + ": " + 
                 data[i].text + "\r\n" + 
                 data[i].created_at + "\r\n" + 
                 "------------------------------ " + i + " ------------------------------" + "\r\n";
                 console.log(twitterResults);
-                log(twitterResults); // calling log function
+                log(twitterResults); 
             }
         }  else {
             console.log("Error :"+ error);
@@ -113,7 +114,7 @@ function spotifyThisSong(songName) {
                     "URL: " + songInfo[i].preview_url + "\r\n" + 
                     "------------------------------ " + i + " ------------------------------" + "\r\n";
                     console.log(spotifyResults);
-                    log(spotifyResults); // calling log function
+                    log(spotifyResults); 
                 }
             }
         }	else {
