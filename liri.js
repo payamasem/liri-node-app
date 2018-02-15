@@ -21,7 +21,7 @@ switch(liriArgument) {
         "2. spotify-this-song 'any song name' "+"\r\n"+
         "3. movie-this 'any movie name' "+"\r\n"+
         "4. do-what-it-says."+"\r\n"+
-        "Be sure to put the movie or song name in quotation marks if it's more than one word.");
+        "Put the movie/song name in quotation marks if it's more than one word.");
 };
 
 
@@ -31,7 +31,7 @@ function movieThis(){
         movie = "Mr. Nobody";
     }
     params = movie
-    request("http://www.omdbapi.com/?i=tt3896198&apikey=trilogy") + params + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
+    request("http://www.omdbapi.com/?i=tt3896198&apikey=40e9cece") + params + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var movieObject = JSON.parse(body);
             console.log(movieObject);
