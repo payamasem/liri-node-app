@@ -18,3 +18,14 @@
 	case "movie-this": movieThis(); break;
 	case "do-what-it-says": doWhatItSays(); break;
 	};
+
+    function myTweets() {
+		console.log(keys);
+
+		var client = new twitter({
+			consumer_key: keys.twitterKeys.consumer_key,
+			consumer_secret: keys.twitterKeys.consumer_secret,
+			access_token_key: keys.twitterKeys.access_token_key,
+			access_token_secret: keys.twitterKeys.access_token_secret, 
+		});
+		var twitterUsername = process.argv[3];
